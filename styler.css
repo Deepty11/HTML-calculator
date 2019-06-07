@@ -1,0 +1,15 @@
+
+button{
+  width:100%;
+}
+input{
+  width:100%;
+}
+#headline{
+  position: relative;
+  left:45%;
+  font-style: italic;
+  font-family: fantasy;
+  color:primary;
+  
+}

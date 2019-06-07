@@ -1,0 +1,145 @@
+<html>
+<head>
+<title> Calculator</title>
+<link rel="stylesheet" type="text/css" href="styler.css">
+<meta name="viewport" content="width=device-width , initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div>
+    <h1 id="headline"><strong>CALCULATOR</strong></h1>
+  </div>
+  <div class ="container">
+    <table class="table table-bordered table table-responsive">
+      <tr>
+        <td colspan="4"><input type="text" value="" id="ans"></td>
+      </tr>
+      <tr>
+        <td ><button id="C" onclick="C()" class=" btn btn-success">C</button></td>
+        <td><button id="E" onclick="E()" class=" btn btn-primary">E</td>
+        <td><button id="%" onclick="percentage(" value="%" class=" btn btn-warning" >%</button></td>
+        <td><button id="/" onclick="divide()" value="/" class=" btn btn-info">&divide;</button></td>
+      </tr>
+      <tr>
+        <td><button id="7" onclick="element(id)" value="7" class=" btn btn-success">7</button></td>
+        <td><button id="8" onclick="element(id)" value="8"class=" btn btn-primary">8</button></td>
+        <td><button id="9" onclick="element(id)" value="9" class=" btn btn-warning">9</button></td>
+        <td><button id="X" onclick="multiplication()" value="*" class=" btn btn-info">&times;</button></td>
+      </tr>
+      <tr>
+        <td><button id="4" onclick="element(id)" value="4"class=" btn btn-success">4</button></td>
+        <td><button id="5" onclick="element(id)" value="5" class=" btn btn-primary">5</button></td>
+        <td><button id="6" onclick="element(id)" value="6" class=" btn btn-warning">6</buton></td>
+        <td><button id="+" onclick="plus()" value="+" class=" btn btn-info">&plus;</button></td>
+      </tr>
+      <tr>
+        <td><button id="1" onclick="element(id)" value="1" class=" btn btn-success">1</button></td>
+        <td><button id="2" onclick="element(id)" value="2"class=" btn btn-primary">2</button></td>
+        <td><button id="3" onclick="element(id)" value="3" class=" btn btn-warning">3</button></td>
+        <td><button id="-" onclick="minus()" value="-" class=" btn btn-info">&minus;</button></td>
+      </tr>
+      <tr>
+        <td><button id="*" onclick="star()" value="*" class=" btn btn-success">*</button></td>
+        <td><button id="0" onclick="element(id)" value="0" class=" btn btn-primary">0</button></td>
+        <td><button id="." onclick="element(id)" value="." class=" btn btn-warning">.</button></td>
+        <td><button id="=" onclick="equals()" value="=" class=" btn btn-info">&equals;</button></td>
+      </tr>
+    </table>
+
+  </div>
+  <script>
+  var calStack=[];
+  var elem= document.getElementById("ans");
+
+  function element(id){
+    var element1=id;
+    var elem1=document.getElementById(element1);
+    old=elem.value;
+    elem.value=old+elem1.value;
+
+    console.log(elem1.value);
+  }
+
+  function E(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("E");
+     var old=elem.value;
+     elem.value=old.slice(0,-1);
+
+     //calStack.push(elem1.value);
+
+
+
+  }
+  function C(){
+     //var elem= document.getElementById("ans");
+    // var elem1=document.getElementById("1");
+    console.log("clear");
+    if(elem){
+      elem.value="";
+    }
+    console.log(elem.value);
+
+
+  }
+
+  function star(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("*");
+     var old=elem.value;
+     elem.value=old+elem1.value;
+     calStack.push(elem1.value);
+
+  }
+  function plus(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("+");
+     var old=elem.value;
+     elem.value=old+elem1.value;
+
+
+
+  }
+  function minus(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("-");
+     var old=elem.value;
+     elem.value=old+elem1.value;
+
+
+  }
+  function divide(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("/");
+     var old=elem.value;
+     elem.value=old+elem1.value;
+
+
+
+  }
+  function multiplication(){
+     //var elem= document.getElementById("ans");
+     var elem1=document.getElementById("X");
+     var old=elem.value;
+     elem.value=old+elem1.value;
+
+
+
+  }
+  function equals(){
+     //var elem= document.getElementById("ans");
+     //var elem1=document.getElementById("=");
+     let num=elem.value;
+     let result=eval(num);
+     elem.value=result;
+     console.log(result);
+
+
+  }
+  </script>
+
+</body>
+</html>
